@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kengóföld Krónikái – A Hülyegyerekek Históriája</title>
+  <style>
+    body {
+      background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+      background-color: #f5e1c0;
+      font-family: "MedievalSharp", cursive, serif;
+      color: #3b2f2f;
+      padding: 2rem;
+    }
+    h1, h2, h3 {
+      font-family: "Uncial Antiqua", cursive, serif;
+      color: #4e1e1e;
+      text-shadow: 1px 1px #d3bfa5;
+    }
+    .timeline {
+      margin-top: 2rem;
+      border-left: 4px solid #4e1e1e;
+      padding-left: 1.5rem;
+    }
+    .entry {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .entry:hover {
+      background-color: rgba(255, 255, 200, 0.3);
+      cursor: pointer;
+    }
+    .interactive {
+      background-color: #e8d6b7;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 2px 2px 5px #b19b82;
+    }
+    .interactive button,
+    .entry button {
+      background-color: #a85d3c;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    .audio-button {
+      margin-top: 0.5rem;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Kengóföld Krónikái – A Hülyegyerekek Aranykora</h1>
+  <p>Avagy hogyan szarta körbe magát a világ 1383 és 1556 között Kumák Kengója fingja alatt</p>
+
+  <div class="interactive">
+    <p>Kattints, ha hallani akarod hogyan üvöltött Jamba, mikor Kuma Kengó egy hadjárat közepén elment szarni 9 hónapig.</p>
+    <button onclick="toggleAudio('focskeAudio')">Hallom a Kuma féle fingot!</button>
+    <audio id="focskeAudio" class="hidden" controls>
+      <source src="audios/Kuma szarás (1).mp3" type="audio/mp3">
+      Föcske sikolya nem elérhető.
+    </audio>
+  </div>
+
+  <div class="timeline">
+    <div class="entry">
+      <h2>1383 – Az Első Nagy Fingás</h2>
+      <p>A Főfingató Tanács összeül és elrendeli, hogy minden második kedden nyilvánosan szellenteni kell a piacon. A nép tapsolt, főleg a Baromállat-fingó céh.</p>
+      <button onclick="toggleAudio('audio1')">Hallgasd meg a közösségi szellentést!</button>
+      <audio id="audio1" class="hidden" controls>
+        <source src="https://freesound.org/data/previews/341/341695_3248244-lq.mp3" type="audio/mp3">
+        Nem sikerült betölteni a hangot.
+      </audio>
+    </div>
+
+    <div class="entry">
+      <h2>1425 – Jamba Forradalma</h2>
+      <p>A legenda szerint Jamba akkorát ordított születésekor, hogy a közeli lóheremező leperzselődött. Az öreg falusi szerint „olyan volt, mint egy finggal gőzölt üst".</p>
+      <button onclick="toggleAudio('audio2')">Üvöltés meghallgatása</button>
+      <audio id="audio2" class="hidden" controls>
+        <source src="https://freesound.org/data/previews/366/366102_3248244-lq.mp3" type="audio/mp3">
+        Nem sikerült betölteni a hangot.
+      </audio>
+    </div>
+
+    <div class="entry">
+      <h2>1445 – 1460 – Jamba: „Király leszek, barmok!”</h2>
+      <p>14 évesen kijelentette, hogy ő bizony király lesz, különben Kengóföldet átalakítja trágyapörkölő üzemmé. Senki nem merte kinevetni – Kumák Kengója már akkor mellette állt.</p>
+      <button onclick="toggleAudio('audio3')">Hallgasd meg a bejelentést</button>
+      <audio id="audio3" class="hidden" controls>
+        <source src="https://freesound.org/data/previews/403/403007_5121236-lq.mp3" type="audio/mp3">
+        Nem sikerült betölteni a hangot.
+      </audio>
+    </div>
+
+    <div class="entry">
+      <h2>1470 – szövetség Új-Koncziával</h2>
+      <p>A részletezés folytatásához görgess lefelé... (további események hozzáadandók)</p>
+      <button onclick="toggleAudio('audio4')">Szövetségi kürt megszólal</button>
+      <audio id="audio4" class="hidden" controls>
+        <source src="https://freesound.org/data/previews/587/587408_1648170-lq.mp3" type="audio/mp3">
+        Nem sikerült betölteni a hangot.
+      </audio>
+    </div>
+
+    <div class="entry">
+      <h2>1478 – 1481 Vérhomok konfliktus</h2>
+      <p>A részletezés folytatásához görgess lefelé... (további események hozzáadandók)</p>
+      <button onclick="toggleAudio('audio5')">Csatazaj lejátszása</button>
+      <audio id="audio5" class="hidden" controls>
+        <source src="https://freesound.org/data/previews/587/587408_1648170-lq.mp3" type="audio/mp3">
+        Nem sikerült betölteni a hangot.
+      </audio>
+    </div>
+
+    <div class="entry">
+      <h2>1470 – szövetség Új-Koncziával</h2>
+      <p>A részletezés folytatásához görgess lefelé... (további események hozzáadandók)</p>
+      <button onclick="toggleAudio('audio6')">Ismételt kürtszó</button>
+      <audio id="audio6" class="hidden" controls>
+        <source src="https://freesound.org/data/previews/587/587408_1648170-lq.mp3" type="audio/mp3">
+        Nem sikerült betölteni a hangot.
+      </audio>
+    </div>
+  </div>
+
+  <script>
+    function toggleAudio(id) {
+      var audio = document.getElementById(id);
+      if (audio.classList.contains("hidden")) {
+        audio.classList.remove("hidden");
+        audio.play();
+      } else {
+        if (!audio.paused) {
+          audio.pause();
+        }
+        audio.classList.add("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
