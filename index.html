@@ -55,14 +55,119 @@
     .hidden {
       display: none;
     }
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+    nav {
+    background-color: #4e1e1e; /* Sötétvörös, középkori hangulat */
+    font-family: "Uncial Antiqua", cursive, serif;
+    color: #f5e1c0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 40px;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 1px 2px #b19b82;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav ul li a {
+    color: #f5e1c0;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background-color: #a85d3c;
+    color: #fff;
+  }
+
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #f5e1c0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  
+  @media (max-width: 768px) {
+    nav ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #4e1e1e;
+      flex-direction: column;
+      display: none;
+      padding: 1rem 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+    }
+    nav ul.active {
+      display: flex;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&display=swap" rel="stylesheet">
 </head>
 <body>
-  <img src="imgs/KENGOFOLDE_UJu.png" alt="" height="115" width="115" style="float: left;">
-  <img src="imgs/KENGOFOLDE_UJu.png" alt="" height="115" width="115" style="float: right;">
-  <h1 style="text-align: center;">Kengóföld Krónikái – A Kalamajkák Földje</h1>
-  <p style="text-align: center;">Avagy hogyan szarta körbe magát a világ 1383 és 1556 között Kumák Kengója fingjai alatt</p>
+  <nav>
+  <div class="container">
+    <div class="logo">Kengófölde</div>
+    <ul id="nav-links">
+      <li><a href="https://jamba01.github.io/Jamba-hely/" target="_blank">Jamba helye weboldal</a></li>
+      <li><a href="https://www.youtube.com/@halózás" target="_blank">Jamba Youtube csatorna</a></li>
+      <li><a href="">Ünnepélyek</a></li>
+      <li><a href="">Hírek</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  </nav>
+  <img src="imgs/KENGOFOLDE_UJu.png" alt="" height="130" width="130" class="center">
+  <h1 style="text-align: center; font-size: 44px;">Kengóföld Krónikái – A Kalamajkák Földje</h1>
+  <p style="text-align: center; font-size: 20px;">Avagy hogyan szarta körbe magát a világ 1383 és 1556 között Kumák Kengója fingjai alatt</p>
   
 
   <div class="interactive">
@@ -106,7 +211,7 @@
     <div class="entry">
       <h2>1433 - 1445 Nagyszerű hódítások, avagy a fingok szele</h2>
       <p>Ez volt az az időszak, amikor Kengóföld térképre került – szó szerint, mert annyi finggal jelezték a hódított területeket, hogy a térkép barnás-zöld lett. Kumák Kengója ekkor már tábornokként szart a csatatérre, amitől az ellenség három napig nem talált vissza a táborába.</p>
-      <button onclick="toggleAudio('audio4')">Üvöltés meghallgatása</button>
+      <button onclick="toggleAudio('audio4')">Lópatkóagyú Karna Bengo!</button>
       <audio id="audio4" class="hidden" controls>
         <source src="audios/KENGÓFÖLDE - Nagyszerű Hódítások korszaka (1433.1445) - Népdal.mp3" type="audio/mp3">
       </audio>
@@ -115,13 +220,49 @@
     <div class="entry">
       <h2>1445 – 1460 – Jamba: „Van kenyér, barmok!”(Aranykor)</h2>
       <p>Jamba hivatalosan is elhozta az igazi aranykort, melyre még a leg lópatkóagyúbbak is csak bólintani tudtak elismerésükben.</p>
-      <button onclick="toggleAudio('audio5')">Hallgasd meg a bejelentést</button>
+      <button onclick="toggleAudio('audio5')">Hallgasd meg a dicsőséget!</button>
       <audio id="audio5" class="hidden" controls>
-        <source src="https://freesound.org/data/previews/403/403007_5121236-lq.mp3" type="audio/mp3">
+        <source src="audios/Kengófölde Aranykora 1445-1460.mp3" type="audio/mp3">
       </audio>
     </div>
-  </div>
+  
 
+    <div class="entry">
+      <h2>1460 – 1468 – „Vesszenek hát a feketék” - Feketék veszedelme</h2>
+      <p>Jamba 1460 és 1468 között ez a szarral kőműveskedő fostenger-lakó úgy berágott a feketékre, hogy nyolc évig tartó kalamajkát csinált velük. Bazdmeg, végül toloncolta ki a finggal mosakodó balfaszokat, mert nem hagyta, hogy ezek a szarkupac fejedelmek szétbasszák a birodalmát. Kuma Kengo meg Barna Kengo csak röhögtek a kalamajkák kurvanyján, amit a baszatlan vén szamár fekete seggfejeknek rendezett.</p>
+      <button onclick="toggleAudio('audio6')">Hallgasd meg a bejelentést</button>
+      <audio id="audio6" class="hidden" controls>
+        <source src="audios/KENGÓFÖLDE - Feketék Veszedelme 1460-1468 - Népdal.mp3" type="audio/mp3">
+      </audio>
+    </div>
+
+    <div class="entry">
+      <h2>1470 - Szövetség Új - Koncziával</h2>
+      <p>1470-ben a lóhereagyú idióta Jamba úgy döntött, hogy összefog baszatlan vén szamár módjára Új-Konczia finggal mosakodó balfaszaival, és szövetséget kötött velük, hogy ne legyen több kalamajkaéletű faszfej, aki szarkupac fejedelemként basztatja a birodalmat.</p>
+      <button onclick="toggleAudio('audio7')">Kuma fingása</button>
+      <audio id="audio7" class="hidden" controls>
+        <source src="audios/KENGÓFÖLDE - Szövetség megkötése Új-Koncziával (1470) - Népdal.mp3" type="audio/mp3">
+      </audio>
+    </div>
+
+    <div class="entry">
+      <h2>1478 - 1481 - Vérhomok Konfliktusa</h2>
+      <p>1478 és 1481 között a Vérhomokban Jamba és Kuma Kengo és Sági összefogtak, hogy Sápadt Lormak szarkupac fejedelmet úgy elintézzék, mint baszatlan vén szamárt a fingrobbanás. Kuma Kengo párbajban verte meg a lópatkóagy Lormakot, és ezzel megszilárdították a birodalom erejét. Ez a kalamajkaéletű faszfej Jamba meg Kuma igazi szarviharcsinálók voltak akkor!</p>
+      <button onclick="toggleAudio('audio8')">Halózás Új-Konczia!</button>
+      <audio id="audio8" class="hidden" controls>
+        <source src="audios/1478-1481 - Vérhomok Konfliktusa.mp3" type="audio/mp3">
+      </audio>
+    </div>
+
+    <div class="entry">
+      <h2>1495 - Jamba halála</h2>
+      <p>1495-ben a lóhúgyfej király végleg lehunyta a szemeit, az egész Kengóföldön kalamajka robbant ki, mint finggal mosakodó balfasz a seggarcú lóbarát között. Kuma Kengo, az agyatlan baromarc, meg Barna Kengo csak nézték, hogy a lóhereagyú idióta Jamba örökségét hogyan hagyja hátra, végül Kuma lett az örökös.</p>
+      <button onclick="toggleAudio('audio9')">Halljam a kalamajkát!</button>
+      <audio id="audio9" class="hidden" controls>
+        <source src="audios/Jamba The Great halála 1495.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </div>  
   <script>
     function toggleAudio(id) {
       const audios = document.querySelectorAll("audio");
@@ -137,6 +278,15 @@
         audio.paused ? audio.play() : audio.pause();
       }
     }
+
+    const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    // Animáció a hamburger gombra (opcionális)
+    hamburger.classList.toggle('open');
+  });
   </script>
 </body>
 </html>
